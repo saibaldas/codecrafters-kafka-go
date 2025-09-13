@@ -3,6 +3,12 @@ IN CMD: docker run -p 4500:4500 --rm -i -t saibaldas/codecrafterskafkago:latest 
 THEN IN BASH :
     go build -o app/main app/main.go
     ./app/main "$@"
-IN CMD: docker exec -i -t e2488a246fe5e73b88895fc6c88edf04aadfeb49d165a601483f159dd00ee372 /bin/bash  
+IN CMD: docker exec -i -t acb34fd1c2659bd371c463778e3b383b07deecf1763d41814e1cb3f0636ab903 /bin/bash  
     go build -o app/test app/test.go
     ./app/test "$@"  
+
+IN CMD: docker exec -i -t 109ff9fef3eb4b12fb65472c7371dedb3f4a5a9e6bfb012baa21613a58ad89bf /bin/bash  
+    apt-get update
+    apt-get install netcat-traditional
+    apt-get install bsdmainutils
+    echo -n "Placeholder request" | nc -v localhost 9092 | hexdump -C
