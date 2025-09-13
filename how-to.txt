@@ -1,0 +1,8 @@
+IN VSCODE: docker build -t saibaldas/codecrafterskafkago .
+IN CMD: docker run -p 4500:4500 --rm -i -t saibaldas/codecrafterskafkago:latest /bin/bash
+THEN IN BASH :
+    go build -o app/main app/main.go
+    ./app/main "$@"
+IN CMD: docker exec -i -t e2488a246fe5e73b88895fc6c88edf04aadfeb49d165a601483f159dd00ee372 /bin/bash  
+    go build -o app/test app/test.go
+    ./app/test "$@"  
